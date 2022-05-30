@@ -5,7 +5,8 @@ import { ProgressComponent } from '../progress/progress.component';
 import { Graphics1Component } from '../graphics1/graphics1.component';
 import { PagesComponent } from './pages.component';
 import { SharedModule } from 'src/app/shared/shared.module';
-import { BrowserModule } from '@angular/platform-browser';
+import { RouterModule } from '@angular/router';
+import { AppRoutingModule } from 'src/app/app-routing.module';
 
 @NgModule({
   declarations: [
@@ -20,6 +21,6 @@ import { BrowserModule } from '@angular/platform-browser';
     Graphics1Component,
     PagesComponent,
   ],
-  imports: [CommonModule, SharedModule, BrowserModule],
+  imports: [CommonModule, SharedModule, RouterModule],
 })
 export class PagesModule {}
