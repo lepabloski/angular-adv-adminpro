@@ -1,33 +1,19 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
-import { LoginComponent } from './auth/login/login.component';
-import { RegisterComponent } from './auth/register/register.component';
-import { DashboardComponent } from './pages/dashboard/dashboard.component';
-import { Graphics1Component } from './pages/graphics1/graphics1.component';
+// Custom modules
+import { PagesRoutingModule } from './pages/pages.router';
+import { AuthRoutingModule } from './auth/auth.router';
+// modulo independiente
 import { NotFoundPageComponent } from './not-found-page/not-found-page.component';
-import { PagesComponent } from './pages/pages/pages.component';
-import { ProgressComponent } from './pages/progress/progress.component';
 
-const routes: Routes = [
-  {
-    path: '',
-    component: PagesComponent,
-    children: [
-      { path: 'progress', component: ProgressComponent },
-      { path: 'graphic', component: Graphics1Component },
-      { path: 'dashboard', component: DashboardComponent },
-      { path: '', redirectTo: 'dashboard' , pathMatch: 'full'},
-    ],
-  },
-
-  { path: 'login', component: LoginComponent },
-  { path: 'register', component: RegisterComponent },
-
-  { path: '**', component: NotFoundPageComponent },
-];
+const routes: Routes = [{ path: '**', component: NotFoundPageComponent }];
 @NgModule({
   declarations: [],
-  imports: [RouterModule.forRoot(routes)],
+  imports: [
+    RouterModule.forRoot(routes),
+    PagesRoutingModule,
+    AuthRoutingModule,
+  ],
   exports: [RouterModule],
 })
 export class AppRoutingModule {}
