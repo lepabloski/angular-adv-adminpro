@@ -5,18 +5,15 @@ import { AppRoutingModule } from './app-routing.module';
 import { PagesModule } from './pages/pages/pages.module';
 
 import { AppComponent } from './app.component';
-import { LoginComponent } from './auth/login/login.component';
-import { RegisterComponent } from './auth/register/register.component';
-import { NotFoundPageComponent } from './pages/not-found-page/not-found-page.component';
+import { NotFoundPageComponent } from './not-found-page/not-found-page.component';
+import { AuthModule } from './auth/auth.module';
 
 @NgModule({
   declarations: [
     AppComponent,
-    LoginComponent,
-    RegisterComponent,
     NotFoundPageComponent,
   ],
-  imports: [BrowserModule, AppRoutingModule, PagesModule],
+  imports: [BrowserModule, AppRoutingModule, PagesModule, AuthModule],
   providers: [],
   bootstrap: [AppComponent],
 })
