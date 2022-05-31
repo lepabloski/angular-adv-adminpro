@@ -11,7 +11,6 @@
             aria-valuemin="0"
             aria-valuemax="100"
             style="height: 10px"
-            [style.width]="getProgress"
           >
             <span class="sr-only">85% Complete</span>
           </div>
@@ -24,38 +23,13 @@
   <div class="col-6">
     <div class="card">
       <div class="card-body">
-        <div class="input-group">
-          <span class="input-group-btn">
-            <button
-              class="btn btn-primary"
-              type="button"
-              (click)="changeProgress(-5)"
-            >
-              <i class="fa fa-minus"></i>
-            </button>
-          </span>
-          <input 
-            type="text" 
-            class="form-control" 
-            placeholder="Product name"
-            [(ngModel)]="progress" 
-            />
-          <span class="input-group-btn">
-            <button
-              class="btn btn-primary"
-              type="button"
-              (click)="changeProgress(+5)"
-            >
-              <i class="fa fa-plus"></i>
-            </button>
-          </span>
-        </div>
+          <app-increment></app-increment>
       </div>
     </div>
   </div>
   <div class="col-6">
     <div class="card">
-      <div class="card-body">2</div>
+      <div class="card-body"><app-increment></app-increment></div>
     </div>
   </div>
 </div>

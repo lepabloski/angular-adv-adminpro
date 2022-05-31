@@ -7,6 +7,7 @@ import { Graphics1Component } from '../graphics1/graphics1.component';
 import { PagesComponent } from './pages.component';
 import { SharedModule } from 'src/app/shared/shared.module';
 import { RouterModule } from '@angular/router';
+import { ComponentsModule } from 'src/app/components/components.module';
 
 @NgModule({
   declarations: [
@@ -21,6 +22,6 @@ import { RouterModule } from '@angular/router';
     Graphics1Component,
     PagesComponent,
   ],
-  imports: [FormsModule, CommonModule, SharedModule, RouterModule],
+  imports: [FormsModule, ComponentsModule, CommonModule, SharedModule, RouterModule],
 })
 export class PagesModule {}
