@@ -6,7 +6,10 @@ import { AuthRoutingModule } from './auth/auth.router';
 // modulo independiente
 import { NotFoundPageComponent } from './not-found-page/not-found-page.component';
 
-const routes: Routes = [{ path: '**', component: NotFoundPageComponent }];
+const routes: Routes = [
+  { path: '', redirectTo: '/dashboard', pathMatch: 'full' },
+  { path: '**', component: NotFoundPageComponent }
+];
 @NgModule({
   declarations: [],
   imports: [

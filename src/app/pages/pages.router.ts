@@ -7,13 +7,12 @@ import { PagesComponent } from './pages/pages.component';
 
 const routes: Routes = [
   {
-    path: '',
+    path: 'dashboard',
     component: PagesComponent,
     children: [
+      { path: '', component: DashboardComponent },
       { path: 'progress', component: ProgressComponent },
       { path: 'graphic', component: Graphics1Component },
-      { path: 'dashboard', component: DashboardComponent },
-      { path: '', redirectTo: 'dashboard', pathMatch: 'full' },
     ],
   },
 
