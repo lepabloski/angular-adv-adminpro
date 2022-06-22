@@ -1,8 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { SettingsService } from 'src/app/services/settings.service';
 
-declare function initFuntion():void;
-
 @Component({
   selector: 'app-pages',
   templateUrl: './pages.component.html',
@@ -13,7 +11,7 @@ export class PagesComponent implements OnInit {
   constructor( private settings: SettingsService) { }
 
   ngOnInit() {
-    initFuntion()
+
     const defaultThemeUrl = `./assets/css/colors/default.css`;
     const selectedTheme = localStorage.getItem('theme') || defaultThemeUrl
     
